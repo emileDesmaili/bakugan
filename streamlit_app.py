@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+from streamlit_app.components import scrape_images, display_images
 
 
 # PAGE SETUP
@@ -38,5 +39,27 @@ with side2:
 
 page_container = st.sidebar.container()
 with page_container:
-    page = option_menu("Menu", ["Main Page", 'Budget','City Explorer'], 
+    page = option_menu("Menu", ["Main Page", 'Image Bank','Model training'], 
     icons=['house','cash','dpad'], menu_icon="cast", default_index=0)
+
+if "animes" not in st.session_state:
+    st.session_state["animes"] = []
+
+
+
+if page == "Main Page":
+    st.title('First We Scrape!')
+    with st.form('image scraping'):
+        anime = st.text_input('Select anime')
+        
+        n_images = st.number_input('How many images?',1,1000)
+        submitted = st.form_submit_button('Lets scrape!')
+    if submitted:
+        st.session_state["animes"].append(anime)
+        scrape_images(anime, n_images)
+        st.success('Scraping completed')
+if page == 'Image Bank':
+        animes = st.multiselect('Which animes to display?',set(st.session_state["animes"]))
+        for anime in set(animes):
+            st.write(f'#### {anime}')
+            display_images(anime)
