@@ -1,11 +1,17 @@
 ![alt text](streamlit_app/assets/app_logo.PNG)
-# BakuGAN
+# BakuGAN / YugiGAN
+
+Initally I planned to generate anime characters, but given low dataset quality, I pivoted to Yugioh card generation:
+![alt text](data/processed/images/Figure_1.png)
+
 
 Anime Characters Generation
 
 Built with ❤️ by [emiledesmaili](https://github.com/emiledesmaili)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/emiledesmaili/bakugan)
+
+
 
 
 ## What's this?

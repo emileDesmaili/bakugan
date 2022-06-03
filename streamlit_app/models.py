@@ -18,10 +18,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from IPython.display import HTML
+from PIL import Image
+from os import listdir
 
 
 
-
+for filename in listdir('data/raw/yugioh/Card Images/'):
+    if filename.endswith('.png'):
+        try:
+            img = Image.open('data/raw/yugioh/Card Images/'+filename)  # open the image file
+            img.verify()  # verify that it is, in fact an image
+        except (IOError, SyntaxError) as e:
+            print(filename)
+            os.remove('data/raw/yugioh/Card Images/'+filename)
 
 
 
@@ -37,13 +46,13 @@ if __name__ == "__main__":
     torch.manual_seed(manualSeed)
 
     # Root directory for dataset
-    dataroot = "data/raw/images"
+    dataroot = "data/raw/yugioh"
 
     # Number of workers for dataloader
     workers = 2
 
-    # Batch size during training
-    batch_size = 128
+    # Batch size during training. 128 in the paper
+    batch_size = 32
 
     # Spatial size of training images. All images will be resized to this
     #   size using a transformer.
@@ -307,13 +316,16 @@ if __name__ == "__main__":
     plt.show()
 
 
-    #%%capture
-    fig = plt.figure(figsize=(8,8))
-    plt.axis("off")
-    ims = [[plt.imshow(np.transpose(i,(1,2,0)), animated=True)] for i in img_list]
-    ani = animation.ArtistAnimation(fig, ims, interval=1000, repeat_delay=1000, blit=True)
+    # #animation
+    # #%%capture
+    # fig = plt.figure(figsize=(8,8))
+    # plt.axis("off")
+    # ims = [[plt.imshow(np.transpose(i,(1,2,0)), animated=True)] for i in img_list]
+    # ani = animation.ArtistAnimation(fig, ims, interval=1000, repeat_delay=1000, blit=True)
 
-    HTML(ani.to_jshtml())
+    # HTML(ani.to_jshtml())
+
+
     # Grab a batch of real images from the dataloader
     real_batch = next(iter(dataloader))
 
