@@ -1,0 +1,9 @@
+{
+    "name": "BakuGAN",
+    "description": "Anime Characters Generation",
+    "repository": "https://github.com/emiledesmaili/bakugan",
+    "keywords": [
+        "streamlit",
+        "python"
+    ]
+}
