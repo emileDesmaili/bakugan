@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-from streamlit_app.components import scrape_images, display_images
+from streamlit_app.components import scrape_images, display_images, display_fake
 
 
 # PAGE SETUP
@@ -52,12 +52,18 @@ if page == "Main Page":
     with st.form('image scraping'):
         anime = st.text_input('Select anime')
         
-        n_images = st.number_input('How many images?',1,1000)
+        n_images = st.number_input('How many images?',1,100000)
         submitted = st.form_submit_button('Lets scrape!')
     if submitted:
         st.session_state["animes"].append(anime)
         scrape_images(anime, n_images)
-        st.success('Scraping completed')
+        st.success(f'Scraping completed for {anime}')
+    st.title("Then We Generate")
+    if st.button("Generate"):
+        display_fake()
+
+    
+
 if page == 'Image Bank':
         animes = st.multiselect('Which animes to display?',set(st.session_state["animes"]))
         for anime in set(animes):

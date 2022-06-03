@@ -21,13 +21,7 @@ import cv2
 
 
 
-
-
-
-
-
-  
-    
+ 
     
 def scrape_images(anime, max_results=50):
     """method to scrape images from duckduckgo and save them
@@ -57,7 +51,6 @@ def display_images(anime, max_results=50):
     
     path = 'data/raw/images/' + anime
     globpath = path + '/*.jpg'
-    images = glob.glob(path)
     image_list = []
 
     #scrape only if directory doesn't exist
@@ -70,11 +63,23 @@ def display_images(anime, max_results=50):
         with x:
             st.image(image_list[a], use_column_width=False, width=250, channels = 'BGR')
 
+def display_fake():
+    path = 'data/processed/images'
+    globpath = path + '/*.jpg'
+    image_list = []
+    with open("streamlit_app/models.py") as f:
+        code = compile(f.read(), "streamlit_app/models.py", 'exec')
+        exec(code)
+
+    for img in glob.glob(globpath):
+        image_list.append(cv2.imread(img))
+    cols = st.columns(len(image_list))
+    for a, x in enumerate(cols):
+        with x:
+            st.image(image_list[a], use_column_width=False, width=250, channels = 'BGR')
 
 
-
-    
-
+        
 
 
 
