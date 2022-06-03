@@ -52,7 +52,7 @@ if __name__ == "__main__":
     workers = 2
 
     # Batch size during training. 128 in the paper
-    batch_size = 16
+    batch_size = 8
 
     # Spatial size of training images. All images will be resized to this
     #   size using a transformer.
@@ -65,10 +65,10 @@ if __name__ == "__main__":
     nz = 100
 
     # Size of feature maps in generator
-    ngf = 64
+    ngf = 128
 
     # Size of feature maps in discriminator
-    ndf = 64
+    ndf = 128
 
     # Number of training epochs
     num_epochs = 5
@@ -347,8 +347,7 @@ if __name__ == "__main__":
     image_name = 'fake_.jpg'
     image_path = 'data/processed/images/'+image_name 
     image = np.transpose(img_list[-1],(1,2,0))
-    import matplotlib
-    matplotlib.image.imsave(image_path, image)
+    save_image(image, image_path)
 
    
 

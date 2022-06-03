@@ -2,7 +2,7 @@
 # BakuGAN -> YugiGAN
 
 Initally I planned to generate anime characters (BakuGAN), but given the low dataset quality (scraped form the web), I pivoted to Yugioh card generation with YugiGAN, so far it looks like this:
-![alt text](data/processed/images/Figure_1.png)
+![alt text](data/processed/images/Figure_2.png)
 
 Built with ❤️ by [emiledesmaili](https://github.com/emiledesmaili)
 
