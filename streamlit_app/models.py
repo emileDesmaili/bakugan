@@ -65,10 +65,10 @@ if __name__ == "__main__":
     nz = 100
 
     # Size of feature maps in generator
-    ngf = 128
+    ngf = 64
 
     # Size of feature maps in discriminator
-    ndf = 128
+    ndf = 64
 
     # Number of training epochs
     num_epochs = 5
