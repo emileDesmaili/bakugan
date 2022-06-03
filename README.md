@@ -1,4 +1,4 @@
-![alt text](streamlit_app/assets/app_logo.PNG)
+![alt text](streamlit_app/assets/app_logo_yugi.jpg)
 # BakuGAN / YugiGAN
 
 Initally I planned to generate anime characters, but given low dataset quality, I pivoted to Yugioh card generation:

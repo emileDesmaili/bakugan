@@ -5,7 +5,7 @@ from streamlit_app.components import scrape_images, display_images, display_fake
 
 # PAGE SETUP
 st.set_page_config(
-    page_title="BakuGAN",
+    page_title="BakuGAN/YugiGAN",
     layout="wide",
     page_icon="streamlit_app/assets/L_Old_London.png",
 
@@ -28,7 +28,7 @@ with left_column:
 with right_column:
     st.write("##### Authors\nThis tool has been developed by [Emile D. Esmaili](https://github.com/emileDesmaili)")
 with center_column:
-    st.image("streamlit_app/assets/app_logo.PNG")
+    st.image("streamlit_app/assets/app_logo_yugi.jpg")
 
 
 side1, side2 = st.sidebar.columns([1,3])
