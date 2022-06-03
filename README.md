@@ -1,3 +1,4 @@
+![alt text](streamlit_app/assets/app_logo.PNG)
 # BakuGAN
 
 Anime Characters Generation
