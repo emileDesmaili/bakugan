@@ -347,7 +347,7 @@ if __name__ == "__main__":
 
     image_name = datetime.datetime.now().strftime("%m%d%Y") + '.jpg'
     image_path = 'data/processed/images/'+image_name 
-    plt.imsave(image_path, np.transpose(img_list[-1],(1,2,0)))
+    plt.imsave(image_path, np.transpose(img_list[-1].cpu().numpy(),(1,2,0)))
 
    
 
