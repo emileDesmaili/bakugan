@@ -37,9 +37,11 @@ git clone git@github.com:emiledesmaili/bakugan.git
 # Go to correct directory
 cd bakugan
 
-# Run the streamlit app (will install dependencies in a virtualenvironment in the folder venv)
+# For the anime pic scraper, run the streamlit app (will install dependencies in a virtualenvironment in the folder venv)
 make run
 ```
+# for YugiGAN: 
+run models.py
 
 Open your browser to [http://localhost:8501/](http://localhost:8501/) if it doesn't open automatically.
 
