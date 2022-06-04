@@ -20,6 +20,7 @@ import matplotlib.animation as animation
 from IPython.display import HTML
 from PIL import Image
 from os import listdir
+import datetime
 
 
 
@@ -52,7 +53,7 @@ if __name__ == "__main__":
     workers = 2
 
     # Batch size during training. 128 in the paper
-    batch_size = 8
+    batch_size = 16
 
     # Spatial size of training images. All images will be resized to this
     #   size using a transformer.
@@ -73,8 +74,8 @@ if __name__ == "__main__":
     # Number of training epochs
     num_epochs = 5
 
-    # Learning rate for optimizers
-    lr = 0.0002
+    # Learning rate for optimizers. Defaults to 0.0002 in paper
+    lr = 0.001
 
     # Beta1 hyperparam for Adam optimizers
     beta1 = 0.5
@@ -344,10 +345,9 @@ if __name__ == "__main__":
     plt.show()
 
 
-    image_name = 'fake_.jpg'
+    image_name = datetime.datetime.now().strftime("%m%d%Y") + '.jpg'
     image_path = 'data/processed/images/'+image_name 
-    image = np.transpose(img_list[-1],(1,2,0))
-    save_image(image, image_path)
+    plt.imsave(image_path, np.transpose(img_list[-1],(1,2,0)))
 
    
 
