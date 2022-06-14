@@ -53,7 +53,7 @@ if __name__ == "__main__":
     workers = 2
 
     # Batch size during training. 128 in the paper
-    batch_size = 16
+    batch_size = 32
 
     # Spatial size of training images. All images will be resized to this
     #   size using a transformer.
@@ -72,16 +72,16 @@ if __name__ == "__main__":
     ndf = 64
 
     # Number of training epochs
-    num_epochs = 5
+    num_epochs = 125
 
     # Learning rate for optimizers. Defaults to 0.0002 in paper
-    lr = 0.001
+    lr = 0.0002
 
     # Beta1 hyperparam for Adam optimizers
     beta1 = 0.5
 
     # Number of GPUs available. Use 0 for CPU mode.
-    ngpu = 0
+    ngpu = 2
 
     # We can use an image folder dataset the way we have it setup.
     # Create the dataset
@@ -347,7 +347,7 @@ if __name__ == "__main__":
 
     image_name = datetime.datetime.now().strftime("%m%d%Y") + '.jpg'
     image_path = 'data/processed/images/'+image_name 
-    plt.imsave(image_path, np.transpose(img_list[-1].cpu().numpy(),(1,2,0)))
+    plt.imsave(image_path, np.transpose(img_list[-1],(1,2,0)))
 
    
 
