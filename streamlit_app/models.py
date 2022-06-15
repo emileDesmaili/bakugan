@@ -53,7 +53,7 @@ if __name__ == "__main__":
     workers = 2
 
     # Batch size during training. 128 in the paper
-    batch_size = 32
+    batch_size = 16
 
     # Spatial size of training images. All images will be resized to this
     #   size using a transformer.
@@ -306,7 +306,7 @@ if __name__ == "__main__":
                 img_list.append(vutils.make_grid(fake, padding=2, normalize=True))
 
             iters += 1
-        image_path = 'data/processed/images/'+ epoch + '.jpg'
+        image_path = 'data/processed/images/'+ str(epoch) + '.jpg'
         plt.imsave(image_path, np.transpose(img_list[-1].cpu().numpy(),(1,2,0)))
 
     plt.figure(figsize=(10,5))
