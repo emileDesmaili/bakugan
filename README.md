@@ -1,8 +1,9 @@
 ![alt text](streamlit_app/assets/app_logo_yugi.jpg)
 # BakuGAN -> YugiGAN
 
-Initally I planned to generate anime characters (BakuGAN), but given the low dataset quality (scraped form the web), and the incosistency of the image you can get, it didn't seem like such a good idea. I pivoted to Yugioh card generation with **YugiGAN**, as I will always be a nostalgic fan of yugioh cards & the anime!
-The model is trained for 125 epochs and a batch size of 16, on a dataset of 10K+ iamges. So far it looks like this:
+- Initally I planned to generate anime characters (BakuGAN), but given the lack of harmony in the structure of images I got from web scraping, it didn't seem like a GAN could learn the generative process behind such disparate images
+- So I pivoted to Yugioh card generation with **YugiGAN**, as I will always be a nostalgic fan of Yugioh cards & the animes (DM, GX and 5D's, didn't watch the rest)!
+- The model is trained on a dataset of 10K+ images. You can seen the hyperparameters I chose in the script. So far it looks like this:
 ![alt text](data/processed/images/Figure_6.png)
 
 Built with ❤️ by [emiledesmaili](https://github.com/emiledesmaili)
