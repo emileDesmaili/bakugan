@@ -53,7 +53,7 @@ if __name__ == "__main__":
     workers = 2
 
     # Batch size during training. 128 in the paper
-    batch_size = 64
+    batch_size = 32
 
     # Spatial size of training images. All images will be resized to this
     #   size using a transformer.
@@ -234,11 +234,17 @@ if __name__ == "__main__":
     iters = 0
 
     print("Starting Training Loop...")
+    #creating folder ot store epoch images
+    date = datetime.datetime.now().strftime("%m%d%Y")
+    root = 'data/processed/epochs/'
+    folder = os.path.join(root,date)
+    if os.path.isdir(folder):
+        pass
+    else:
+        os.mkdir(folder)
     # For each epoch
     for epoch in range(num_epochs):
-        date = datetime.datetime.now().strftime("%m%d%Y")
-        root = 'data/processed/epochs/'
-        os.mkdir(os.path.join(root,date))
+
         # For each batch in the dataloader
         for i, data in enumerate(dataloader, 0):
 
@@ -309,8 +315,8 @@ if __name__ == "__main__":
                 img_list.append(vutils.make_grid(fake, padding=2, normalize=True))
 
             iters += 1
-
-        image_path = f'data/processed/images/epochs/{date}/'+ str(epoch) + '.jpg'
+        #saving image on epoch
+        image_path = f'data/processed/epochs/{date}/'+ str(epoch) + '.jpg'
         plt.imsave(image_path, np.transpose(img_list[-1].cpu().numpy(),(1,2,0)))
 
     plt.figure(figsize=(10,5))
