@@ -4,7 +4,7 @@
 - Initally I planned to generate anime characters (BakuGAN), but given the lack of harmony in the structure of images I got from web scraping, it didn't seem like a GAN could learn the generative process behind such disparate images
 - So I pivoted to Yugioh card generation with **YugiGAN**, as I will always be a nostalgic fan of Yugioh cards & the animes (DM, GX and 5D's, didn't watch the rest)!
 - The model is trained on a dataset of 10K+ images. You can see the hyperparameters I chose in the script. So far it looks like this:
-![alt text](data/processed/images/Figure_6.png)
+![alt text](data/processed/images/finalized figures/Figure_6.png)
 
 Built with ❤️ by [emiledesmaili](https://github.com/emiledesmaili)
 
